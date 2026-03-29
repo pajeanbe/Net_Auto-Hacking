@@ -18,3 +18,7 @@
       cisco.ios.ios_interfaces:
         config: "{{ interfaces }}"
         state: merged
+    - name: config L3 interfaces
+      cisco.ios.ios_l3_interfaces:
+        config: "{{ L3_interfaces }}"
+        state: merged

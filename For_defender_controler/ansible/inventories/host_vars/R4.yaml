@@ -14,3 +14,20 @@ interfaces:
   - name: e1/0
     description: LAN2
     enabled: true
+
+L3_interfaces:
+  - name: e0/0
+    ipv4:
+      - address: 192.168.1.6/24
+  - name: e0/1
+    ipv4:
+      - address: 192.168.0.4/24
+  - name: e0/2
+    ipv4:
+      - address: 192.168.2.14/30
+  - name: e0/3
+    ipv4:
+      - address: 192.168.2.10/30
+  - name: e1/0
+    ipv4:
+      - address: 192.168.3.2/24

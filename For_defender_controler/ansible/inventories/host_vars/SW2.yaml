@@ -14,3 +14,8 @@ interfaces:
   - name: e1/0
     description: access
     enabled: true
+
+L3_interfaces:
+  - name: vlan 1
+    ipv4:
+      - address: 192.168.1.2/24
