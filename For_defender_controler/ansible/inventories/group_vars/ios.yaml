@@ -1,7 +1,7 @@
 ansible_network_os: ios
 ansible_become: yes #privilege escalation
 ansible_become_method: enable
-ansible_become_pass: Controller123@
+ansible_become_pass: controller123@
 ansible_user: controller
-ansible_password: Controller123@
+ansible_password: controller123@
 ansible_connection: network_cli
