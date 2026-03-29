@@ -13,7 +13,7 @@ ip dhcp excluded-address {{ r.start }} {{ r.end }}
 
 {% for pool in dhcp.pools %}
 ip dhcp pool {{ pool.name }}
-   network {{ pool.network }}
+   network {{ pool.network }} {{ pool.mask }}
    default-router {{ pool.default_router }}
    {% if pool.dns_server is defined %}
    {% for dns in pool.dns_server %}

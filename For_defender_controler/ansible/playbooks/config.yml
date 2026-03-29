@@ -25,3 +25,4 @@
     - name: config DHCP on R1 router
       cisco.ios.ios_config:
         src: "../templates/dhcp.j2"
+      when: inventory_hostname == "R1"
