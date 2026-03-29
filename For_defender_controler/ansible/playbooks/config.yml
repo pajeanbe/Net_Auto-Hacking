@@ -14,10 +14,8 @@
       copy:
         content: "{{ output.stdout | join('\n') }}"
         dest: "../files/backup/backup_{{ inventory_hostname }}_{{ ansible_date_time.epoch }}.txt"
-     # delegate_to: localhost
+      delegate_to: localhost
     - name: config interfaces
       cisco.ios.ios_interfaces:
         config: "{{ interfaces }}"
-      state: merged
-#    - name: L3 configuration
-
+        state: merged
