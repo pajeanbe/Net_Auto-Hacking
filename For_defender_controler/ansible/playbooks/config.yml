@@ -12,7 +12,7 @@
     - name: save output
       copy:
         content: "{{ output.stdout | join('\n') }}"
-        dest: "../files/backup/backup_{{ inventory_hostname }}_{{ ansible_date_time.epoch }}.txt"
+        dest: "../files/backup/backup_{{ inventory_hostname }}_{{ now(utc=true,fmt='%Y-%m-%d %H:%M:%S') }}.txt"
       delegate_to: localhost
     - name: config interfaces
       cisco.ios.ios_interfaces:
