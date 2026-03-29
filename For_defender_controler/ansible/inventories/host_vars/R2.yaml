@@ -20,6 +20,7 @@ L3_interfaces:
   - name: e0/0
     ipv4:
       - address: 192.168.1.4/24
+
   - name: e0/1
     ipv4:
       - address: 192.168.0.2/24
@@ -32,3 +33,6 @@ L3_interfaces:
   - name: e1/0
     ipv4:
       - address: 192.168.3.2/24
+    helper_addresses:
+      ipv4:
+        - destination_ip: 192.168.1.1
