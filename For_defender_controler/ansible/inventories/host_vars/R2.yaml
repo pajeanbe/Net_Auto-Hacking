@@ -1,16 +1,16 @@
 interfaces:
   - name: e0/0
     description: mgmt_interface
-    enable: true
+    enabled: true
   - name: e0/1
     description: OSPF_links
-    enable: true
+    enabled: true
   - name: e0/2
     description: to_r1
-    enable: true
+    enabled: true
   - name: e0/3
     description: to_r4
-    enable: true
+    enabled: true
   - name: e1/0
     description: LAN1
-    enable: true
+    enabled: true

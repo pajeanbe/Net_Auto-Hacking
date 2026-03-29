@@ -1,16 +1,16 @@
 interfaces:
   - name: vlan 1
     description: mgmt_interface
-    enable: true
+    enabled: true
   - name: e0/1
     description: to_r2
-    enable: true
+    enabled: true
   - name: e0/2
     description: to_r1
-    enable: true
+    enabled: true
   - name: e0/3
     description: access
-    enable: true
+    enabled: true
   - name: e1/0
     description: access
-    enable: true
+    enabled: true
