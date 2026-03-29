@@ -1,0 +1,23 @@
+
+- name: configuration play
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: backup current configuration
+      cisco.ios.ios_command:
+        commands:
+          - show version
+          - sh running
+          - sh start
+      register: output
+    - name: save output
+      copy:
+        content: "{{ output.stdout | join('\n') }}"
+        dest: "../files/backup/backup_{{ inventory_hostname }}_{{ ansible_date_time.epoch }}.txt"
+      delegate_to: localhost
+    - name: config interfaces
+      cisco.ios.ios_interfaces:
+        config: "{{ interfaces }}"
+      state: merged
+#    - name: L3 configuration
+

@@ -1,0 +1,34 @@
+interfaces:
+  - name: e0/0
+    description: mgmt_interface
+    enable: true
+  - name: e0/1
+    description: OSPF_links
+    enable: true
+  - name: e0/2
+    description: to_r2
+    enable: true
+  - name: e0/3
+    description: to_r3
+    enable: true
+  - name: e1/0
+    description: LAN1
+    enable: true
+
+
+L3_interfaces:
+  - name: e0/0
+    ipv4:
+      - address: 192.168.1.3/24
+  - name: e0/0
+    ipv4:
+      - address: 192.168.0.1/24
+  - name: e0/0
+    ipv4:
+      - address: 192.168.2.1/30
+  - name: e0/0
+    ipv4:
+      - address: 192.168.0.1/30
+  - name: e0/0
+    ipv4:
+      - address: 192.168.0.3/24
