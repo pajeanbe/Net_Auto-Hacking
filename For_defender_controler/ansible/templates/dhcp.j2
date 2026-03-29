@@ -1,0 +1,23 @@
+{% if dhcp.exclude_address.singles is defined %}
+{% for ip in dhcp.exclude_address.singles %}
+ip dhcp excluded-address {{ ip }}
+{% endfor %}
+{% endif %}
+
+{% if dhcp.exclude_address.ranges is defined %}
+{% for r in dhcp.exclude_address.ranges %}
+ip dhcp excluded-address {{ r.start }} {{ r.end }}
+{% endfor %}
+{% endif %}
+
+
+{% for pool in dhcp.pools %}
+ip dhcp pool {{ pool.name }}
+   network {{ pool.network }}
+   default-router {{ pool.default_router }}
+   {% if pool.dns_server is defined %}
+   {% for dns in pool.dns_server %}
+   dns-server {{ dns }}
+   {% endfor %}
+   {% endif %}
+{% endfor %}

@@ -30,4 +30,4 @@ L3_interfaces:
       - address: 192.168.2.10/30
   - name: e1/0
     ipv4:
-      - address: 192.168.3.2/24
+      - address: 192.168.4.2/24
