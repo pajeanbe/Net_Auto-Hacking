@@ -42,7 +42,7 @@ dhcp:
       dns_server:
         - 8.8.8.8
     - name: LAN2
-      network: 192.168.3.0/24
+      network: 192.168.4.0
       mask: 255.255.255.0
       default_router: 192.168.3.1
       dns_server:
