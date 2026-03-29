@@ -1,4 +1,3 @@
-
 - name: configuration play
   hosts: all
   gather_facts: no
@@ -7,8 +6,8 @@
       cisco.ios.ios_command:
         commands:
           - show version
-          - sh running
-          - sh start
+          - show running-config
+          - show startup-config
       register: output
     - name: save output
       copy:
