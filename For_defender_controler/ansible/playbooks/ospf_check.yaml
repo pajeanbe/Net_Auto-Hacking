@@ -10,4 +10,4 @@
 
     - name: print result
       debug:
-        msg: "The list of routers iD is {{ output.stdout[0] | return_router_ids }}"
+        msg: "The list of neighbor routers iD is {{ output.stdout[0] | return_router_ids }}"
