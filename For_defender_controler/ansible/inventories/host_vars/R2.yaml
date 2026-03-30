@@ -63,3 +63,33 @@ ospf:
           name:
             - e0/0
             - e1/0
+ios_ospf_interfaces:
+  - name: e0/1
+    address_family:
+      - afi: ipv4
+        authentication:
+          message_digest: true
+        message_digest_keys:
+          - id: 1
+            key: "ospf123@$"
+            algorithm: md5
+
+  - name: e0/2
+    address_family:
+      - afi: ipv4
+        authentication:
+          message_digest: true
+        message_digest_keys:
+          - id: 1
+            key: "ospf123@$"
+            algorithm: md5
+
+  - name: e0/3
+    address_family:
+      - afi: ipv4
+        authentication:
+          message_digest: true
+        message_digest_keys:
+          - id: 1
+            key: "ospf123@$"
+            algorithm: md5
