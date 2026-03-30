@@ -30,7 +30,7 @@ with ConnectHandler(**cisco_device) as net_connect:
         sleep(5)
         output = net_connect.send_command('show ip ospf neighb')
         print(output)
-        if output is not None:
+        if output !="":
             print(f"[+] Password found: {ospf_password}")
             break
         else:
