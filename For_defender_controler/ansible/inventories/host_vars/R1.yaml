@@ -58,3 +58,24 @@ dhcp:
         end: 192.168.3.9
       - start: 192.168.4.3
         end: 192.168.4.9
+
+ospf:
+  processes:
+    - process_id: 1
+      router_id: 1.1.1.1
+      networks:
+        - address: 192.168.1.0
+          wildcard_bits: 0.0.0.255
+          area: 0
+        - address: 192.168.0.0
+          wildcard_bits: 0.0.0.255
+          area: 0
+        - address: 192.168.2.0
+          wildcard_bits: 0.0.0.3
+          area: 0
+        - address: 192.168.2.4
+          wildcard_bits: 0.0.0.3
+          area: 0
+        - address: 192.168.3.0
+          wildcard_bits: 0.0.0.255
+          area: 0

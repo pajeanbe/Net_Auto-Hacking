@@ -26,3 +26,10 @@
       cisco.ios.ios_config:
         src: "../templates/dhcp.j2"
       when: inventory_hostname == "R1"
+    - name: Apply OSPFv2
+      cisco.ios.ios_ospfv2:
+        config: "{{ ospf }}"
+        state: merged
+      when: inventory_hostname in groups['routers']
+
+
