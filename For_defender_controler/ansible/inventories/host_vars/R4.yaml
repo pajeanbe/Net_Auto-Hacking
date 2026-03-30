@@ -56,4 +56,8 @@ ospf:
         - address: 192.168.4.0
           wildcard_bits: 0.0.0.255
           area: 0
-
+      passive_interface:
+        interface:
+          name:
+            - e0/0
+            - e1/0

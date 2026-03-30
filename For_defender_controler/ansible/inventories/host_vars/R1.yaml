@@ -44,7 +44,7 @@ dhcp:
     - name: LAN2
       network: 192.168.4.0
       mask: 255.255.255.0
-      default_router: 192.168.3.1
+      default_router: 192.168.4.1
       dns_server:
         - 8.8.8.8
   exclude_address:
@@ -52,7 +52,7 @@ dhcp:
       - 192.168.3.1
       - 192.168.3.2
       - 192.168.4.1
-      - 192.168.4.1
+      - 192.168.4.2
     ranges:
       - start: 192.168.3.3
         end: 192.168.3.9
@@ -79,3 +79,8 @@ ospf:
         - address: 192.168.3.0
           wildcard_bits: 0.0.0.255
           area: 0
+      passive_interface:
+        interface:
+          name:
+            - e0/0
+            - e1/0
