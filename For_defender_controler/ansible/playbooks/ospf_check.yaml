@@ -10,4 +10,4 @@
 
     - name: print result
       debug:
-        msg: "{{ output.stdout[0] | return_router_ids }}"
+        msg: "The list of routers iD is {{ output.stdout[0] | return_router_ids }}"
