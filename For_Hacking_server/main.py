@@ -20,7 +20,7 @@ def load_passwords(path):
 with ConnectHandler(**cisco_device) as net_connect:
     for ospf_password in load_passwords("password_dictionnaries.txt"):
         commands = [
-            "interface e0/0",
+            "interface e0/1",
             f'ip ospf message-digest-key 1 md5 {ospf_password}',
             "ip ospf authentication message-digest"
         ]
