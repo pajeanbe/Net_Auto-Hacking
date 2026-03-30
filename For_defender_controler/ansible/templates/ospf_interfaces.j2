@@ -1,0 +1,5 @@
+{% for iface in ospf_interfaces %}
+interface {{ iface.name }}
+ ip ospf message-digest-key 1 md5 {{ iface.password }}
+ ip ospf authentication message-digest
+{% endfor %}

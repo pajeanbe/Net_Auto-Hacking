@@ -31,9 +31,8 @@
         config: "{{ ospf }}"
         state: merged
       when: inventory_hostname in groups['routers']
-
-    - name: Configure OSPF interface authentication
-      cisco.ios.ios_ospf_interfaces:
-        config: "{{ ios_ospf_interfaces }}"
-        state: merged
+    - name: config OSPF interfaces password
+      cisco.ios.ios_config:
+        src: "../templates/ospf_interfaces.j2"
+      when: inventory_hostname in groups['routers']
 
