@@ -1,3 +1,5 @@
+from time import sleep
+
 from netmiko import ConnectHandler
 from pathlib import Path
 
@@ -26,5 +28,6 @@ with ConnectHandler(**cisco_device) as net_connect:
         ]
         output = net_connect.send_config_set(commands)
         print(output)
+        sleep(10)
         output = net_connect.send_command('show ip ospf neighb')
         print(output)
