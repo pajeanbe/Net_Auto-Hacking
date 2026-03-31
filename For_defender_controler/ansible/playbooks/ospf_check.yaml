@@ -18,9 +18,11 @@
       debug:
         msg: "OSPF contains an intruder"
       when: output.stdout[0] | return_router_ids
+
     - name: get list of intruders
       set_fact:
-        intruders_list: "{{ output.stdout[0].split('\n') | reject('match', '^[\\s]*$') | list }}"
+        intruders_list: "{{ output.stdout[0].split('\n') }}"
+
     - name: print result 2
       debug:
         msg: "{{intruders_list}}"
