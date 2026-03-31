@@ -12,5 +12,6 @@ def get_intruders_list(output,router_ids):
 class FilterModule(object):
     def filters(self):
         return {
-            'if_contain_intruders': if_contain_intruders
+            'if_contain_intruders': if_contain_intruders,
+            'get_intruders_list': get_intruders_list
         }
