@@ -8,7 +8,7 @@ def if_contain_intruders(output,router_ids):
 
 def get_intruders_list(output,router_ids):
     output=[line.split()[0] for line in output.split('\n')[2:-1]]
-    return list(set(router_ids)-set(output))
+    return list(set(output)-set(router_ids))
 class FilterModule(object):
     def filters(self):
         return {
