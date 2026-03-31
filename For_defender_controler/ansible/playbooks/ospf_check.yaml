@@ -2,14 +2,13 @@
   gather_facts: no
   hosts: routers
   tasks:
-    - name: show ip ospf neighbor
+    - name: show ip OSPF neighbor
       ios_command:
         commands:
-          - show ip ospf neighbor
+          - show ip OSPF neighbor
       register: output
 
     - name: print result
       debug:
-        msg: "OSPF contain an intruider and the list of IP is {{output.stdout[0] | return_router_ids[1]}} "
-      when: output.stdout[0] | return_router_ids[0]
-
+        msg: "OSPF contains an intruder and the list of IP is {{output.stdout[0] | return_router_ids[1]}} "
+      when: "{{output.stdout[0] | return_router_ids[0]}}"
