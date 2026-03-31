@@ -1,5 +1,4 @@
 
-router_ids=["1.1.1.1","2.2.2.2","3.3.3.3","4.4.4.4"]
 def if_contain_intruders(output):
     output=[line.split()[0] for line in output.split('\n')[2:-1]]
     if not set(router_ids).issuperset(set(output)):
@@ -7,7 +6,7 @@ def if_contain_intruders(output):
     else:
         return False
 
-def list_of_intruder(output):
+def get_intruders_list(output,router_ids):
     output=[line.split()[0] for line in output.split('\n')[2:-1]]
     return list(set(router_ids)-set(output))
 class FilterModule(object):
