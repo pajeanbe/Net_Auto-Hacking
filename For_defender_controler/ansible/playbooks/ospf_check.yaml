@@ -1,6 +1,12 @@
 - name: check ospf
   gather_facts: no
   hosts: routers
+  vars:
+    routers_ids:
+      - 1.1.1.1
+      - 2.2.2.2
+      - 3.3.3.3
+      - 4.4.4.4
   tasks:
     - name: show ip OSPF neighbor
       ios_command:
@@ -12,3 +18,9 @@
       debug:
         msg: "OSPF contains an intruder"
       when: output.stdout[0] | return_router_ids
+    - name: get list of intruders
+      set_fact:
+        intruders_list: "{{ output.stdout[0].split('\n') | reject('match', '^[\\s]*$') | list }}"
+    - name: print result 2
+      debug:
+        msg: "{{intruders_list}}"
