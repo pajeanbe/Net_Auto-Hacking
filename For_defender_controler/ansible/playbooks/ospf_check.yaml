@@ -17,7 +17,7 @@
     - name: print result
       debug:
         msg: "OSPF contains an intruder"
-      when: output.stdout[0] | return_router_ids
+      when: output.stdout[0] | if_contain_intruders
 
     - name: get list of intruders
       set_fact:
