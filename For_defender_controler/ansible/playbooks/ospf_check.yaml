@@ -2,7 +2,7 @@
   gather_facts: no
   hosts: routers
   vars:
-    router_ids:
+    routers_ids:
       - 1.1.1.1
       - 2.2.2.2
       - 3.3.3.3
@@ -17,7 +17,7 @@
     - name: print result
       debug:
         msg: "OSPF contains an intruder"
-      when: output.stdout[0] | if_contain_intruders(router_ids)
+      when: output.stdout[0] | if_contain_intruders(routers_ids)
 
     - name: get list of intruders
       set_fact:
