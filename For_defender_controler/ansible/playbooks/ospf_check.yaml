@@ -10,6 +10,6 @@
 
     - name: print result
       debug:
-        msg: "The list of neighbor routers iD is "
-      when: output.stdout[0] | return_router_ids
+        msg: "OSPF contain an intruider and the list of IP is {{output.stdout[0] | return_router_ids[1]}} "
+      when: output.stdout[0] | return_router_ids[0]
 
