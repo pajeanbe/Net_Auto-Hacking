@@ -1,5 +1,5 @@
 
-def if_contain_intruders(output):
+def if_contain_intruders(output,router_ids):
     output=[line.split()[0] for line in output.split('\n')[2:-1]]
     if not set(router_ids).issuperset(set(output)):
         return True #contain a non-valid router_ID
