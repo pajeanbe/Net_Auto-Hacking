@@ -11,5 +11,5 @@
     - name: print result
       debug:
         msg: "The list of neighbor routers iD is "
-      when: "{{ output.stdout[0] | return_router_ids }}"
+      when: output.stdout[0] | return_router_ids
 
