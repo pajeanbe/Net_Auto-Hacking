@@ -10,5 +10,5 @@
 
     - name: print result
       debug:
-        msg: "OSPF contains an intruder and the list of IP is {{output.stdout[0] | return_router_ids[1]}} "
-      when: "{{output.stdout[0] | return_router_ids[0]}}"
+        msg: "OSPF contains an intruder"
+      when: output.stdout[0] | return_router_ids
